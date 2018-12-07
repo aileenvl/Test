@@ -24,6 +24,10 @@ body{
     background-color: lightgreen !important;
 }
 
+.due {
+    display: block;
+}
+
 .taskCard >img{
     width: 160px;
 }

@@ -4,7 +4,6 @@ function loadTasks(taskList){
     container.innerHTML='';
 
     taskList.forEach((task,i)=>{
-        debugger;
         let divTask = document.createElement('div');
         divTask.className="taskCard";
         divTask.innerHTML = `
@@ -12,7 +11,8 @@ function loadTasks(taskList){
             <h4> <input type="checkbox" ${task.completed?"checked":""} title="check completed">  ${task.title + ' ' + i}</h4>
             <span>created on ${moment(task.createdOn).format('MMM/DD/YYYY')} by ${task.createdBy}</span>
             <p>${task.description}</p>
-            <span>Due on ${moment(task.dueDate).format('MMM/DD/YYYY')}</span>            
+            <span class="due">Due on ${moment(task.dueDate).format('MMM/DD/YYYY')}</span>  
+            <button data-attribute="${i}" type="button" class="btn btn-danger" onClick="deleteTask(this)">Delete</button>          
         `;
 
         if(task.completed)
@@ -24,7 +24,10 @@ function loadTasks(taskList){
         container.appendChild(divTask);
     });
 }
-
+function deleteTask(task){
+    taskList.splice(parseInt(task.getAttribute('data-attribute')),1)
+    loadTasks(taskList);
+}
 
 loadTasks(taskList);
 
