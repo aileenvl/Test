@@ -10,9 +10,9 @@ function loadTasks(taskList){
         divTask.innerHTML = `
             ${task.img?"<img src='" + task.img + "' />":""}
             <h4> <input type="checkbox" ${task.completed?"checked":""} title="check completed">  ${task.title + ' ' + i}</h4>
-            <span>created on ${task.createdOn} by ${task.createdBy}</span>
+            <span>created on ${moment(task.createdOn).format('MMM/DD/YYYY')} by ${task.createdBy}</span>
             <p>${task.description}</p>
-            <span>Due on ${task.dueDate}</span>            
+            <span>Due on ${moment(task.dueDate).format('MMM/DD/YYYY')}</span>            
         `;
 
         if(task.completed)
