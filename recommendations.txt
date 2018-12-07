@@ -1,0 +1,6 @@
+*add  another font
+* add input to add to task
+*format date
+*add delete option to task
+*add input to add image
+*change style
