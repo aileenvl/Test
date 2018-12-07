@@ -4,6 +4,7 @@ function loadTasks(taskList){
     container.innerHTML='';
 
     taskList.forEach((task,i)=>{
+        debugger;
         let divTask = document.createElement('div');
         divTask.className="taskCard";
         divTask.innerHTML = `
@@ -28,7 +29,13 @@ function loadTasks(taskList){
 loadTasks(taskList);
 
 
-function addTask(task){
+function addTask(form){
+    let task = {};
+    task.description=form[0].value;
+    task.title = 'Task '+ taskList.length;
+    task.createdBy = 'Me';
+    task.dueDate=''
+    task.createdOn = new Date();
     taskList.unshift(task);
     loadTasks(taskList);
 }

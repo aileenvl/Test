@@ -9,8 +9,14 @@
 
 </head>
 <body>
-    <h1>Task List</h1>
-    <button onclick="addTask({title:'My New Task!',description:'This is my new task',img:'https://picsum.photos/1600/900?v99'})">Add Task</button>
+    <div class="title">
+        <h1>Task List</h1>
+    </div>
+    <form name="task" action="">
+        <input type="text" name="taskDescription" id="taskInput">
+        <input value="Add Task" type="submit" onclick="addTask(task)"></input>
+    </form>
+   
     <div id="taskContainer">
 
     </div>

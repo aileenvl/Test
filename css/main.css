@@ -5,6 +5,9 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+.title{
+    justify-content: center;
+}
 .taskCard{
     background-color: white;
     padding: 10px;
